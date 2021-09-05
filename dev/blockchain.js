@@ -5,6 +5,8 @@ function Blockchain(){
     this.chain = [];
     this.pendingTransactions = [];
 
+    this.CreateNewBlock(100 , 'dummygenesisblockhash1226545dskdsl0', '0'); //genesis block
+
 }
 
 Blockchain.prototype.CreateNewBlock = function(nonce , prevBlockHash , hash ) {
@@ -46,5 +48,19 @@ const dataAsString = prevoiusBlockHash + nonce.toString()  + JSON.stringify(curr
 const hash = sha256(dataAsString);
 return hash;
 }
+
+Blockchain.prototype.proofOfWork = function (prevBlockHash, currentBlockData){
+    let nonce = 0;
+    let hash = this.hashBlock(prevBlockHash, currentBlockData, nonce);
+
+    while(hash.substring(0,4) != '0000' )
+    {
+        nonce++;
+        hash = this.hashBlock(prevBlockHash,currentBlockData,nonce);
+       // console.log(hash); // to see the hash and verify the condition that is to be met 
+    }
+    return nonce; // will show the number of times the program ran before meeting the condition
+}
+
 
 module.exports = Blockchain ;

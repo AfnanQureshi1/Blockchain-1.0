@@ -1,5 +1,7 @@
 const Blockchain  = require('./blockchain');
 var bitcoin = new Blockchain();
+console.log(bitcoin);
+
 /*
 bitcoin.CreateNewBlock(123 , 'jfifgjfijgf' , 'fefeofekfeofke');
 
@@ -18,7 +20,7 @@ bitcoin.CreateNewBlock(125 , 'jcsscsfasasifgjfijgf' , 'faaefeofekfecddofke');
 console.log(bitcoin);
 console.log(bitcoin.chain[2]);
 */
-
+/*
 const prevBlockHash = 'okeodkedoekkddodkcod';
 const CurrentBlockData = [
     {
@@ -31,7 +33,10 @@ const CurrentBlockData = [
       reciever : 'uiorruordir' ,
       amount : 20
 }
-]
-const nonce = 123456;
+]*/
+//const nonce = 123456;    
 
-console.log(bitcoin.hashBlock(prevBlockHash ,CurrentBlockData , nonce )) ;
+//console.log(bitcoin.hashBlock(prevBlockHash ,CurrentBlockData , nonce )) ;  //creating hash of the block 
+
+//bitcoin.proofOfWork(prevBlockHash, CurrentBlockData);                       //generating nonce through proof of work
+//console.log(bitcoin.proofOfWork(prevBlockHash, CurrentBlockData));         // showing output of above
