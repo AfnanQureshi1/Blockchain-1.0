@@ -52,6 +52,18 @@ app.get('/mine',function(req, res){
   });
 });
 
+// a simple web wallet 
+ app.get('/wallet', function (req, res) {
+  res.sendFile(__dirname + "/index.html")
+
+})
+
+app.post('/wallet', function (req, res) {
+  const blockIndex =  bitcoin.createNewTransaction(req.body.amount , req.body.senderAddress , req.body.recipientAddress);
+  res.json({note : `this transaction will be saved in block ${blockIndex}`});  
+});
+
+
 app.listen(3000, function(){
   console.log("this server runs on local port 3000");
 });
