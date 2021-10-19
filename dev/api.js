@@ -4,6 +4,7 @@ const app = express();
 const Blockchain = require('./blockchain');
 const bodyParser = require ('body-parser');
 const  {v4 :  uuidv4}  = require('uuid'); // it will generate random string for us.. which we will use for uniquely identifying miner address for now 
+const port = process.argv[2];
 
 const nodeAddress = uuidv4().split('-').join(''); // to cut off the dashes(-) that uuid in general puts between strings just to be clear with strings
 
@@ -64,7 +65,7 @@ app.post('/wallet', function (req, res) {
 });
 
 
-app.listen(3000, function(){
-  console.log("this server runs on local port 3000");
+app.listen(port, function(){
+  console.log(`this server runs on local port ${port}.....`);
 });
 
