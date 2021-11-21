@@ -64,6 +64,23 @@ app.post('/wallet', function (req, res) {
   res.json({note : `this transaction will be saved in block ${blockIndex}`});  
 });
 
+//REGISTER A NODE AND BROADCAST IT TO THE NETWORK
+app.post('/register-and-broadcast-node' , function(req,res) {
+
+
+});
+
+//This will register a node
+app.post('/register-node', function(req,res){
+
+});
+
+
+//This will register multiple nodes
+app.post('/register-nodes-bulk', function(req,res){
+
+});
+
 
 app.listen(port, function(){
   console.log(`this server runs on local port ${port}.....`);

@@ -1,12 +1,13 @@
 const sha256 = require('sha256');
-
+const currentNodeUrl = process.argv[3];
 
 function Blockchain(){
     this.chain = [];
     this.pendingTransactions = [];
 
     this.CreateNewBlock(100 , 'dummygenesisblockhash1226545dskdsl0', '0'); //genesis block
-
+    this.currentNodeUrl = currentNodeUrl;
+    this.networkNodes =[];
 }
 
 Blockchain.prototype.CreateNewBlock = function(nonce , prevBlockHash , hash ) {
